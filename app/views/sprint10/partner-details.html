@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint10/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">About their partner</h1>
+
+      <form action="partner-details" method="post">
+        {% include 'sprint10/partials/partner-details/name.html' %}
+        {% include 'sprint10/partials/partner-details/age.html' %}
+        {% include 'sprint10/partials/partner-details/address.html' %}
+        {% include 'sprint10/partials/partner-details/nino.html' %}
+        {% include 'sprint10/partials/partner-details/phone.html' %}
+        {% include 'sprint10/partials/partner-details/email.html' %}
+        {% include 'sprint10/partials/partner-details/how-long.html' %}
+
+        <input type="submit" value="Continue" class="button" />
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint12/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Dishonestly claiming a carers benefit</h1>
+
+      <form action="carers" method="post">
+        <fieldset>
+          <div class="form-group {{validate.why_do_you_think_that}}">
+            <label class="form-label-bold" for="carers">What makes you think they're dishonestly claiming a carers benefit?</label>
+            <textarea class="form-control form-control-3-4" rows="5" id="carers" name="carers">{{session.carers}}</textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="firstName-form" class="form-group">
+            <label class="form-label-bold" for="how_long">
+              How long do you think this has been going on?
+            </label>
+            <input type="text" class="form-control" id="how_long" name="how_long" value="{{session.how_long}}">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="firstName-form" class="form-group">
+            <label class="form-label-bold" for="how_many_hours">
+              How many hours a week do they spend caring?
+            </label>
+            <input type="text" class="form-control" id="how_many_hours" name="how_many_hours" value="{{session.how_many_hours}}">
+          </div>
+        </fieldset>
+
+        <h2 class="heading-small">Do they have another job?</h2>
+        <fieldset class="inline">
+          <div class="form-group">
+            <label class="block-label" data-target="job_hidden" for="job_yes">
+              <input id="job_yes" type="radio" name="job_select" value="Yes" aria-controls="job_hidden" aria-expanded="false" {{session.job_yes}}>
+              Yes
+            </label>
+
+            <label class="block-label" data-target="approximate_age_hidden" for="job_no" {{session.job_no}}>
+              <input id="job_no" type="radio" name="job_select" value="No">
+              No
+            </label>
+
+            <div class="panel panel-border-narrow js-hidden" id="job_hidden" style="display:{{session.job_hidden_display}}">
+              <div class="form-group">
+                <fieldset>
+                  <div class="form-date">
+                    <label class="form-label-bold" for="what_is_their_job">
+                      Type of work?
+                    </label>
+
+                    <input type="text" class="form-control" id="what_is_their_job" name="what_is_their_job" value="{{session.what_is_their_job}}">
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="form-group">
+                <fieldset>
+                  <div class="form-date">
+                    <label class="form-label-bold" for="who_do_they_work_for">
+                      Who do they work for?
+                    </label>
+                    <p class="form-hint">Include address if known</p>
+
+                    <textarea class="form-control" name="who_do_they_work_for" id="who_do_they_work_for" rows="4" value="{{session.who_they_work_for}}"></textarea>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <input type="submit" class="button" value="Continue">
+      </form>
+    </div>
+  </div>
+{% endblock %}

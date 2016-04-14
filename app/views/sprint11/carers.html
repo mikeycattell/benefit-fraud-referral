@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint11/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Dishonestly claiming a carers benefit</h1>
+
+      <form action="carers" method="post">
+        <div class="form-group {{validate.why_do_you_think_that}}">
+          <label class="form-label-bold" for="carers">Why do you think that?</label>
+          <textarea class="form-control form-control-3-4" rows="5" id="carers" name="carers">{{session.carers}}</textarea>
+        </div>
+        <input type="submit" class="button" value="submit">
+      </form>
+    </div>
+  </div>
+{% endblock %}

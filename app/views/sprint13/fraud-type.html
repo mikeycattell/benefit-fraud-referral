@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint12/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">What is the person doing?</h1>
+
+      <form method="post" action="fraud-type">
+        <fieldset>
+          <legend class="visuallyhidden" for="form-group-details">
+            Select all that apply
+          </legend>
+
+          <p class="bold-medium">Select as many as you can</p>
+
+          <div class="form-group">
+            {% for check in options %}
+              <label class="block-label" for="{{check.id}}">
+                <input id="{{check.id}}" type="checkbox" name="{{check.id}}" value="{{check.value}}" {{check.checked}} />
+                <span class="heading-small">{{check.title}}</span><br>
+                {{check.desc}}
+              </label>
+            {% endfor %}
+          </div>
+        </fieldset>
+
+        <input type="submit" value="Continue" class="button" />
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint10/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+        Where do you think this income or savings came from?
+      </h1>
+
+      <form action="income-more" method="post">
+        <div class="form-group">
+          {% include 'sprint10/partials/income/savings.html' %}
+          {% include 'sprint10/partials/income/inheritance.html' %}
+          {% include 'sprint10/partials/income/sale-of-something.html' %}
+          {% include 'sprint10/partials/income/pension.html' %}
+          {% include 'sprint10/partials/income/other-income.html' %}
+          {% include 'sprint10/partials/income/winnings.html' %}
+          {% include 'sprint10/partials/income/compensation.html' %}
+          {% include 'sprint10/partials/income/unknown.html' %}
+        </div>
+
+        <input type="submit" class="button" value="Continue" />
+      </form>
+    </div>
+  </div>
+{% endblock %}

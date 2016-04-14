@@ -1,0 +1,23 @@
+<fieldset>
+  <div class="form-group js-hidden" id="employment_employed" style="display:{{session.employment_hidden}};">
+    <div id="employerName-form" class="form-group">
+      <label class="form-label-bold" for="employer_name">Employer or company name</label>
+      <input type="text" class="form-control" id="employer_name" name="employer_name" value="{{session.employer_name}}">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label-bold" for="employer_address">Employer address or location</label>
+      <textarea class="form-control form-control-3-4" rows="5" id="employer_address" name="employer_address">{{session.employer_address}}</textarea>
+    </div>
+
+    <div id="employerService-form" class="form-group">
+      <label class="form-label-bold" for="employer_service">How long have they been working</label>
+      <input type="text" class="form-control" id="employer_service" name="employer_service" value="{{session.employer_service}}">
+    </div>
+
+    <div id="employedTimes-form" class="form-group">
+      <label class="form-label-bold" for="unknownEmployedTimes">Time they leave for work</label>
+      <input type="text" class="form-control" id="employer_time" name="employer_time" value="{{session.employer_time}}">
+    </div>
+  </div>
+</fieldset>

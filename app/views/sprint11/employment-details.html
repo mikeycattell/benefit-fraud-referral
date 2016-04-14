@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint11/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">The person you’re reporting: their employment</h1>
+
+      <div class=" form-group" id="employment-form">
+        <legend class="form-label-bold" for="employment-form">
+          Employment status
+        </legend>
+
+        <form action="employment-details" method="post">
+          <div class="form-group">
+            <fieldset>
+              <label class="block-label" for="employed" data-target="employment_employed">
+                <input id="employed" type="radio" name="employment_select" value="employed" aria-controls="employment_employed" {{session.employed}}>
+                Employed
+              </label>
+
+              <label class="block-label" for="self_employed" data-target="employment_selfemployed">
+                <input id="self_employed" type="radio" name="employment_select" value="self_employed" aria-controls="employment_selfemployed" {{session.self_employed}}>
+                Self employed
+              </label>
+
+              <label class="block-label" for="unknown" data-target="employment_unknown">
+                <input id="unknown" type="radio" name="employment_select" value="unknown" aria-controls="employment_unknown" {{session.unknown}}>
+                I don't know
+              </label>
+            </fieldset>
+          </div>
+
+          {% include "sprint11/partials/employment-details/employment.html" %}
+          {% include "sprint11/partials/employment-details/self_employed.html" %}
+          {% include "sprint11/partials/employment-details/unknown.html" %}
+
+          <input type="submit" class="button" value="Continue">
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

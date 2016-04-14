@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint12/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Dishonestly claiming a disability benefit</h1>
+
+      <form action="disability" method="post">
+        <fieldset>
+          <div class="form-group {{validate.what_makes_you_doubt}}">
+            <label class="form-label-bold" for="what_makes_you_doubt">
+              What activity are they doing to make you doubt that they are disabled?
+            </label>
+            <textarea class="form-control form-control-3-4" rows="5" id="what_makes_you_doubt" name="what_makes_you_doubt">{{session.what_makes_you_doubt}}</textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="firstName-form" class="form-group">
+            <label class="form-label-bold" for="how_long">
+              How long do you think this has been going on?
+            </label>
+            <input type="text" class="form-control" id="how_long" name="how_long" value="{{session.how_long}}">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="firstName-form" class="form-group">
+            <label class="form-label-bold" for="how_often">
+              How often are they doing this?
+            </label>
+            <input type="text" class="form-control" id="how_often" name="how_often" value="{{session.how_often}}">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="form-group">
+            <label class="form-label-bold" for="additional_info">Additional information</label>
+            <p class="form-hint">For example, vehicle details, name of locations visited, other people involved</p>
+            <textarea class="form-control form-control-3-4" rows="5" id="additional_info" name="additional_info">{{session.additional_info}}</textarea>
+          </div>
+        </fieldset>
+
+        <input class="button" type="submit" value="Continue" />
+      </form>
+    </div>
+  </div>
+{% endblock %}

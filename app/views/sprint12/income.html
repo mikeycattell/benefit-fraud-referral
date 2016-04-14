@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint12/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Not declaring savings or other income</h1>
+
+      <form action="income" method="post">
+        <div class="form-group {{validate.what_makes_you_think}}">
+          <label class="form-label-bold" for="what_makes_you_think">
+            What makes you think that this person has savings or other undeclared income?
+          </label>
+
+          <textarea class="form-control form-control-3-4" rows="5" id="what_makes_you_think" name="what_makes_you_think">{{session.what_makes_you_think}}</textarea>
+        </div>
+
+        <div id="return-form" class="form-group   ">
+          <label class="form-label-bold" for="how_much">
+            What is the approximate amount or value?
+          </label>
+
+          <input type="text" class="form-control" id="how_much" name="how_much" value="{{session.how_much}}">
+        </div>
+
+        <div id="return-form" class="form-group   ">
+          <label class="form-label-bold" for="how_long">
+            How long has this been going on?
+          </label>
+
+          <input type="text" class="form-control" id="how_long" name="how_long" value="{{session.how_long}}">
+        </div>
+
+        <input type="submit" class="button" value="Continue" />
+      </form>
+    </div>
+  </div>
+{% endblock %}

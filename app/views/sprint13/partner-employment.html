@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint12/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+        Do you know their partners work details?
+      </h1>
+
+      <form action='partner-employment' method="post">
+        <fieldset class="inline">
+          <legend class="visuallyhidden">
+            Do you know their partners work details?
+          </legend>
+
+          <div class="form-group">
+            <label class="block-label" data-target="pn_employment_hidden" for="pn_employment_select_yes">
+              <input id="pn_employment_select_yes" type="radio" name="pn_employment_select" value="Yes" {{session.pn_employment_select_yes}}>
+              Yes
+            </label>
+
+            <label class="block-label" for="pn_employment_select_no">
+              <input id="pn_employment_select_no" type="radio" name="pn_employment_select" value="No" {{session.pn_employment_select_no}}>
+              No
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="js-hidden" id="pn_employment_hidden" style="display:{{session.pn_employment_hidden}};">
+          {% include 'sprint12/partials/employment-details/employment.html'%}
+        </div>
+
+        <input type="submit" class="button" value="Continue">
+      </form>
+    </div>
+  </div>
+{% endblock %}

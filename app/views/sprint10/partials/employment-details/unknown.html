@@ -1,0 +1,16 @@
+<div class="form-group js-hidden " id="employment_unknown" style="display:{{session.unknown_hidden}};">
+  <div class="form-group">
+    <label class="form-label-bold" for="employmentDetails">Describe what you know about their employment.</label>
+    <textarea class="form-control form-control-3-4" rows="5" id="employmentDetails" name="employmentDetails">{{session.employmentDetails}}</textarea>
+  </div>
+
+  <div id="employerService-form" class="form-group">
+    <label class="form-label-bold" for="unknown_service">How long have they been working</label>
+    <input type="text" class="form-control" id="unknown_service" name="unknown_service" value="{{session.unknown_service}}">
+  </div>
+
+  <div id="unknownEmployedTimes-form" class="form-group   ">
+    <label class="form-label-bold" for="unknownEmployedTimes">Time they leave for work</label>
+    <input type="text" class="form-control" id="unknownEmployedTimes" name="unknownEmployedTimes" value="{{session.unknownEmployedTimes}}">
+  </div>
+</div>

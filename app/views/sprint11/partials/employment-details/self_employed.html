@@ -1,0 +1,21 @@
+<div class="form-group js-hidden " id="employment_selfemployed" style="display:{{session.self_employed_hidden}};">
+  <div id="workType-form" class="form-group">
+    <label class="form-label-bold" for="workType">Type of work</label>
+    <input type="text" class="form-control" id="workType" name="workType" value="{{session.workType}}">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label-bold" for="workAddress">Work address or location</label>
+    <textarea class="form-control form-control-3-4" rows="5" id="workAddress" name="workAddress">{{session.workAddress}}</textarea>
+  </div>
+
+  <div id="employerService-form" class="form-group">
+    <label class="form-label-bold" for="self_employed_service">How long have they been working</label>
+    <input type="text" class="form-control" id="self_employed_service" name="self_employed_service" value="{{session.self_employed_service}}">
+  </div>
+
+  <div id="selfEmployedTimes-form" class="form-group">
+    <label class="form-label-bold" for="unknownEmployedTimes">Time they leave for work</label>
+    <input type="text" class="form-control" id="selfEmployedTimes" name="selfEmployedTimes" value="{{session.selfEmployedTimes}}">
+  </div>
+</div>
