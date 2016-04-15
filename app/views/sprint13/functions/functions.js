@@ -136,7 +136,7 @@ var functions = {
         req,
         'Undeclared non-dependants',
         'the person’s benefit claim is based on a UK address and they have not notified the relevant government department that they now live outside the UK.',
-        'dependants',
+        'dependance',
         'true'),
       build_checkbox(
         req, "Landlord fraud",
