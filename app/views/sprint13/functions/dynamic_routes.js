@@ -175,9 +175,9 @@ var dynamic_routes = {
         urls.next = 'private';
       } else if ( housing_urls.contrived === "true" ) {
         urls.next = 'contrived';
-      } else if ( housing_urls.nonresidence === "true" ) {
+      } else if ( housing_urls.residence === "true" ) {
         urls.next = 'residence';
-      } else if ( housing_urls.nondependance === "true" ) {
+      } else if ( housing_urls.dependance === "true" ) {
         urls.next = 'dependance';
       } else if ( housing_urls.landlord === "true" ) {
         urls.next = 'landlord';
