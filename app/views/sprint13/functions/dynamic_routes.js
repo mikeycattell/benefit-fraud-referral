@@ -18,27 +18,6 @@ var dynamic_routes = {
       urls.back = '/sprint13/start-page';
     }
 
-    // Housing Type
-    if (req.path === '/housing-type') {
-      housing_urls = req.body;
-
-      if ( housing_urls.council === "true" ) {
-        urls.next = 'council';
-      } else if ( housing_urls.private === "true" ) {
-        urls.next = 'private';
-      } else if ( housing_urls.contrived === "true" ) {
-        urls.next = 'contrived';
-      } else if ( housing_urls.nonresidence === "true" ) {
-        urls.next = 'residence';
-      } else if ( housing_urls.nondependance === "true" ) {
-        urls.next = 'dependance';
-      } else if ( housing_urls.landloard === "true" ) {
-        urls.next = 'landloard';
-      } else if ( housing_urls.other === "true" ) {
-        urls.next = 'other';
-      }
-    }
-
     // Fraud Type
     if (req.path === '/fraud-type') {
       fraud_urls = req.body;
@@ -185,16 +164,44 @@ var dynamic_routes = {
       }
     }
 
-    // Housing
-    if (req.path === '/housing') {
-      fraud_urls = req.cookies.fraud_urls;
 
-      if ( fraud_urls.income === "true" ) {
+    // Housing Type
+    if (req.path === '/housing-type') {
+      housing_urls = req.body;
+
+      if ( housing_urls.council === "true" ) {
+        urls.next = 'council';
+      } else if ( housing_urls.private === "true" ) {
+        urls.next = 'private';
+      } else if ( housing_urls.contrived === "true" ) {
+        urls.next = 'contrived';
+      } else if ( housing_urls.nonresidence === "true" ) {
+        urls.next = 'residence';
+      } else if ( housing_urls.nondependance === "true" ) {
+        urls.next = 'dependance';
+      } else if ( housing_urls.landlord === "true" ) {
+        urls.next = 'landlord';
+      } else if ( housing_urls.other === "true" ) {
+        urls.next = 'other';
+      }
+    }
+
+    // council
+    if (req.path === '/council') {
+      housing_urls = req.cookies.housing_urls;
+
+      if ( housing_urls.carers === "true" ) {
+        urls.next = 'carers';
+      } else if ( housing_urls.abroad === "true" ) {
+        urls.next = 'abroad';
+      } else if ( housing_urls.identity === "true" ) {
+        urls.next = 'identity';
+      } else if ( housing_urls.income === "true" ) {
         urls.next = 'income';
-      } else if ( fraud_urls.other === "true" ) {
+      } else if ( housing_urls.other === "true" ) {
         urls.next = 'other';
       } else {
-        urls.next = 'review';
+        urls.next = 'additional-information';
       }
     }
 

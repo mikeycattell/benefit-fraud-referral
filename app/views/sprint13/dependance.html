@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block phase%}
+  {% include 'sprint12/partials/phase-banner.html'%}
+{% endblock %}
+
+{% block main %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Undeclared non-dependants</h1>
+
+      <form method="post" action="council">
+        <input id="submit" type="submit" class="button" value="Continue">
+      </form>
+    </div>
+  </div>
+{% endblock %}

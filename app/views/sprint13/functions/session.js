@@ -297,6 +297,35 @@ var sessions = {
       res.cookie('housing-type', req.body);
     }
 
+    // council
+    if ( req.path === '/council' ) {
+      res.cookie('council', req.body);
+    }
+
+    // contrived
+    if ( req.path === '/contrived' ) {
+      res.cookie('contrived', req.body);
+    }
+
+    // dependance
+    if ( req.path === '/dependance' ) {
+      res.cookie('dependance', req.body);
+    }
+
+    // landlord
+    if ( req.path === '/landlord' ) {
+      res.cookie('landlord', req.body);
+    }
+    // private
+    if ( req.path === '/private' ) {
+      res.cookie('private', req.body);
+    }
+
+    // residence
+    if ( req.path === '/residence' ) {
+      res.cookie('residence', req.body);
+    }
+
 
     // Additional Information
     if ( req.path === '/additional-information' ) {
